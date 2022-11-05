@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./exchange.component.css']
 })
 
-export class HeaderComponent implements OnInit {
+export class ExchangeComponent implements OnInit {
   @Input()
   rateUSD: number;
 
