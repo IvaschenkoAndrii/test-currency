@@ -1,13 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 
+
 @Component({
   selector: 'app-exchange',
   templateUrl: './exchange.component.html',
   styleUrls: ['./exchange.component.css']
 })
-export class ExchangeComponent implements OnInit {
 
+export class HeaderComponent implements OnInit {
   @Input()
   rateUSD: number;
 
@@ -21,4 +22,3 @@ export class ExchangeComponent implements OnInit {
   }
 
 }
-
