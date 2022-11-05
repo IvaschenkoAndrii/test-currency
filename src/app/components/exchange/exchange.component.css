@@ -1,0 +1,12 @@
+.wrap-exchange{
+  display: flex;
+  border: 1px solid red;
+}
+
+.currency-value div{
+  display: flex;
+  padding-top: 15px;
+  align-items: center;
+  justify-content: space-around;
+  width: 498px;
+}

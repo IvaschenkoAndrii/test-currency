@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 
 
@@ -15,10 +16,28 @@ export class ExchangeComponent implements OnInit {
   @Input()
   rateEUR: number;
 
+  form: FormGroup;
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  functionS1() {
+    console.log('s1');
+  }
+
+  functionS2() {
+    console.log('s2');
+  }
+
+  functionI1() {
+    console.log('i1');
+  }
+
+  functionI2() {
+    console.log('i2');
+  }
 }

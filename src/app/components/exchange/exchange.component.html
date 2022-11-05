@@ -1,3 +1,39 @@
-<div>
-  {{rateEUR}}  {{rateUSD}}
+<div class="wrap-exchange">
+  <form [formGroup]="form">
+    <div class="currency-value">
+      <div>
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Продаж</mat-label>
+          <mat-select (selectionChange)="functionS1()">
+            <mat-option>None</mat-option>
+            <mat-option [value]="rateUSD">USD</mat-option>
+            <mat-option [value]="rateEUR">EUR</mat-option>
+            <mat-option [value]=1>UAH</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field color="warn" appearance="fill">
+          <mat-label>Купівля</mat-label>
+          <mat-select (selectionChange)="functionS2()">
+            <mat-option>None</mat-option>
+            <mat-option [value]="rateUSD">USD</mat-option>
+            <mat-option [value]="rateEUR">EUR</mat-option>
+            <mat-option [value]=1>UAH</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill" color="warn">
+          <mat-label>Сума</mat-label>
+          <input (change)="functionI1()" type="number" matInput placeholder="Value">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="warn">
+          <mat-label>Сума</mat-label>
+          <input (change)="functionI2()" type="number" matInput placeholder="Value">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
 </div>
