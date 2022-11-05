@@ -10,7 +10,7 @@
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
           </mat-select>
-          <mat-error *ngIf="error">You must make a selection</mat-error>
+          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
 
         <mat-form-field color="warn" appearance="fill">
@@ -21,7 +21,7 @@
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
           </mat-select>
-          <mat-error *ngIf="error">You must make a selection</mat-error>
+          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
       </div>
 
@@ -34,6 +34,7 @@
         <mat-form-field appearance="fill" color="warn">
           <mat-label>Сума</mat-label>
           <input (change)="functionI2()" type="number" matInput placeholder="Value" formControlName="input2">
+          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
       </div>
     </div>

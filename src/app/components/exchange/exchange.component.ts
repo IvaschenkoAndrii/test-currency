@@ -36,12 +36,11 @@ export class ExchangeComponent implements OnInit {
     })
   }
 
-
   functionI1() {
     (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
       input1: this.form.value.input1,
-      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(0),
+      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
       select1:this.form.value.select1,
       select2: this.form.value.select2
     })
@@ -51,7 +50,7 @@ export class ExchangeComponent implements OnInit {
     console.log('i2');
     (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
-      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(0),
+      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
       input2: this.form.value.input2,
       select1:this.form.value.select1,
       select2: this.form.value.select2
