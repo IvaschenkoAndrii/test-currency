@@ -47,7 +47,7 @@ export class ExchangeComponent implements OnInit {
     console.log('i1');
     console.log(this.form.value.input1);
     this.form.setValue({
-      input1: this.form.value.input1,
+      input1: this.form.value.input1*this.rateUSD,
       input2:this.form.value.input1,
       select1:this.form.value.select1,
       select2: this.form.value.select1
