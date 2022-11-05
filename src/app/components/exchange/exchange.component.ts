@@ -44,7 +44,6 @@ export class ExchangeComponent implements OnInit {
   }
 
   functionI2() {
-    console.log('i2');
     this.form.setValue({
       input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
       input2: this.form.value.input2,
