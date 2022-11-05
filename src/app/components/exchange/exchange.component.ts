@@ -17,8 +17,6 @@ export class ExchangeComponent implements OnInit {
   rateEUR: number;
 
   form: FormGroup;
-  error = true;
-
 
   constructor() {
     this._initForm()
@@ -29,15 +27,14 @@ export class ExchangeComponent implements OnInit {
 
   _initForm(): void {
     this.form = new FormGroup({
-      select1: new FormControl(null, [Validators.required]),
-      select2: new FormControl(null, [Validators.required]),
+      select1: new FormControl(1, [Validators.required]),
+      select2: new FormControl(1, [Validators.required]),
       input1: new FormControl(null, [Validators.required]),
       input2: new FormControl(null, [Validators.required]),
     })
   }
 
   functionI1() {
-    (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
       input1: this.form.value.input1,
       input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
@@ -48,7 +45,6 @@ export class ExchangeComponent implements OnInit {
 
   functionI2() {
     console.log('i2');
-    (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
       input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
       input2: this.form.value.input2,

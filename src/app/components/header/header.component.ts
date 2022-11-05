@@ -11,8 +11,8 @@ import {CurrencyService} from "../../services/currency.service";
 export class HeaderComponent implements OnInit {
   currency: ICurrency[];
 
-  rateUSD:number;
-  rateEUR:number;
+  rateUSD: number;
+  rateEUR: number;
 
   rateDate: string;
 
@@ -39,9 +39,6 @@ export class HeaderComponent implements OnInit {
         this.rateEUR = parseFloat((this.currency[indexEUR].rate).toFixed(2));
       }
 
-      console.log(this.rateUSD);
-      console.log(this.rateEUR);
-      console.log(this.rateDate);
     })
 
   }

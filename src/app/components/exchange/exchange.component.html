@@ -5,23 +5,19 @@
         <mat-form-field color="warn" appearance="fill">
           <mat-label>Продаж</mat-label>
           <mat-select (selectionChange)="functionI1()" formControlName="select1">
-            <mat-option>None</mat-option>
             <mat-option [value]="rateUSD">USD</mat-option>
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
           </mat-select>
-          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
 
         <mat-form-field color="warn" appearance="fill">
           <mat-label>Купівля</mat-label>
           <mat-select (selectionChange)="functionI2()" formControlName="select2">
-            <mat-option>None</mat-option>
             <mat-option [value]="rateUSD">USD</mat-option>
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
           </mat-select>
-          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
       </div>
 
@@ -34,7 +30,6 @@
         <mat-form-field appearance="fill" color="warn">
           <mat-label>Сума</mat-label>
           <input (change)="functionI2()" type="number" matInput placeholder="Value" formControlName="input2">
-          <mat-error *ngIf="error">Виберіть валюту</mat-error>
         </mat-form-field>
       </div>
     </div>
