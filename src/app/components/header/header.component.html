@@ -9,6 +9,6 @@
    </mat-toolbar-row>
 
 </mat-toolbar>
-<div *ngIf="currency">{{currency[0]|json}}</div>
-<app-exchange></app-exchange>
+<app-exchange [rateUSD]="rateUSD" [rateEUR]="rateEUR" ></app-exchange>
+
 

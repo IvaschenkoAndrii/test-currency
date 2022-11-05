@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IRates} from "../../interfaces";
 
 @Component({
   selector: 'app-exchange',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExchangeComponent implements OnInit {
 
+  @Input()
+  rateUSD: number;
+
+  @Input()
+  rateEUR: number;
 
 
   constructor() { }

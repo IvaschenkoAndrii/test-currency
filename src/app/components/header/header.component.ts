@@ -10,15 +10,14 @@ import {CurrencyService} from "../../services/currency.service";
 })
 export class HeaderComponent implements OnInit {
   currency: ICurrency[];
-  // rates = {
-  //   usd: 0,
+
+  // rates: IRates = {
   //   eur: 0,
+  //   usd: 0
   // };
 
-  rates: IRates = {
-    usd: 0,
-    eur: 0
-  };
+  rateUSD:number;
+  rateEUR:number;
 
   constructor(private currencyService: CurrencyService) {
   }
@@ -28,25 +27,21 @@ export class HeaderComponent implements OnInit {
       this.currency = value;
 
       if (this.currency[25].cc === 'USD') {
-        this.rates.usd = parseFloat((this.currency[25].rate).toFixed(2));
+        this.rateUSD = parseFloat((this.currency[25].rate).toFixed(2));
       } else {
         const indexUSD = this.currency.findIndex(value => value.cc === 'USD');
-        this.rates.usd = parseFloat((this.currency[indexUSD].rate).toFixed(2));
+        this.rateUSD = parseFloat((this.currency[indexUSD].rate).toFixed(2));
       }
 
       if (this.currency[32].cc === 'EUR') {
-        this.rates.eur = parseFloat((this.currency[32].rate).toFixed(2));
+        this.rateEUR = parseFloat((this.currency[32].rate).toFixed(2));
       } else {
         const indexEUR = this.currency.findIndex(value => value.cc === 'EUR');
-        this.rates.eur = parseFloat((this.currency[indexEUR].rate).toFixed(2));
+        this.rateEUR = parseFloat((this.currency[indexEUR].rate).toFixed(2));
       }
 
-
-      // this.rates.usd = parseFloat((this.currency[25].rate).toFixed(2));
-      // this.rates.eur = parseFloat((this.currency[32].rate).toFixed(2));
-
-      console.log(this.rates.usd);
-      console.log(this.rates.eur);
+      console.log(this.rateUSD);
+      console.log(this.rateEUR);
     })
 
   }
