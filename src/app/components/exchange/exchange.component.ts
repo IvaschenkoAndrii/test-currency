@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
+
 @Component({
   selector: 'app-exchange',
   templateUrl: './exchange.component.html',
@@ -16,6 +17,7 @@ export class ExchangeComponent implements OnInit {
   rateEUR: number;
 
   form: FormGroup;
+  error = true;
 
 
   constructor() {
@@ -27,40 +29,32 @@ export class ExchangeComponent implements OnInit {
 
   _initForm(): void {
     this.form = new FormGroup({
-      select1: new FormControl(null,[Validators.required]),
-      select2: new FormControl(null,[Validators.required]),
+      select1: new FormControl(null, [Validators.required]),
+      select2: new FormControl(null, [Validators.required]),
       input1: new FormControl(null, [Validators.required]),
       input2: new FormControl(null, [Validators.required]),
     })
   }
 
-  functionS1() {
-    console.log('s1');
-
-  }
-
-  functionS2() {
-    console.log('s2');
-  }
 
   functionI1() {
-    console.log('i1');
-    console.log(this.form.value.input1);
+    (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
-      input1: this.form.value.input1*this.rateUSD,
-      input2:this.form.value.input1,
+      input1: this.form.value.input1,
+      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(0),
       select1:this.form.value.select1,
-      select2: this.form.value.select1
+      select2: this.form.value.select2
     })
   }
 
   functionI2() {
     console.log('i2');
+    (this.form.value.select2 && this.form.value.select1) ? this.error = false : this.error = true;
     this.form.setValue({
-      input1: this.form.value.input2,
-      input2:this.form.value.input2,
+      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(0),
+      input2: this.form.value.input2,
       select1:this.form.value.select1,
-      select2: this.form.value.select1
+      select2: this.form.value.select2
     })
   }
 }
