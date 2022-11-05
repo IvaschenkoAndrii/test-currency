@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IRates} from "../../interfaces";
+
 
 @Component({
   selector: 'app-exchange',

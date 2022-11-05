@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {ICurrency, IRates} from "../../interfaces";
+import {ICurrency} from "../../interfaces";
 import {CurrencyService} from "../../services/currency.service";
 
 @Component({
@@ -11,13 +11,10 @@ import {CurrencyService} from "../../services/currency.service";
 export class HeaderComponent implements OnInit {
   currency: ICurrency[];
 
-  // rates: IRates = {
-  //   eur: 0,
-  //   usd: 0
-  // };
-
   rateUSD:number;
   rateEUR:number;
+
+  rateDate: string;
 
   constructor(private currencyService: CurrencyService) {
   }
@@ -28,9 +25,11 @@ export class HeaderComponent implements OnInit {
 
       if (this.currency[25].cc === 'USD') {
         this.rateUSD = parseFloat((this.currency[25].rate).toFixed(2));
+        this.rateDate = this.currency[25].exchangedate;
       } else {
         const indexUSD = this.currency.findIndex(value => value.cc === 'USD');
         this.rateUSD = parseFloat((this.currency[indexUSD].rate).toFixed(2));
+        this.rateDate = this.currency[indexUSD].exchangedate;
       }
 
       if (this.currency[32].cc === 'EUR') {
@@ -42,6 +41,7 @@ export class HeaderComponent implements OnInit {
 
       console.log(this.rateUSD);
       console.log(this.rateEUR);
+      console.log(this.rateDate);
     })
 
   }

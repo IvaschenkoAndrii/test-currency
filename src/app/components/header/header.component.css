@@ -1,0 +1,34 @@
+.wrap-all{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.curencyRates{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.currency{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.currencyDate{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

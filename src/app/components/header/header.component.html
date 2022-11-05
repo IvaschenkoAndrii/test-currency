@@ -1,14 +1,31 @@
-<mat-toolbar color="warn" class="tool-bar">
+<div class="wrap-all">
 
-  <mat-toolbar-row>
-    <div>Custom Toolbar</div>
-  </mat-toolbar-row>
+  <div class="wrap-header">
 
-  <mat-toolbar-row>
-    <div>Second Line</div>
-   </mat-toolbar-row>
+    <mat-toolbar color="warn" class="tool-bar">
 
-</mat-toolbar>
-<app-exchange [rateUSD]="rateUSD" [rateEUR]="rateEUR" ></app-exchange>
+      <mat-toolbar-row class="currencyDate">
+        <div *ngIf="rateDate">Офіційні курси валют {{rateDate}}</div>
+      </mat-toolbar-row>
 
+      <mat-toolbar-row class="curencyRates">
 
+        <div class="currency">
+          <div>EUR</div>
+          <div>{{rateEUR}}</div>
+        </div>
+
+        <div class="currency">
+          <div>USD</div>
+          <div>{{rateUSD}}</div>
+        </div>
+
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+
+  </div>
+
+  <app-exchange [rateUSD]="rateUSD" [rateEUR]="rateEUR"></app-exchange>
+
+</div>
