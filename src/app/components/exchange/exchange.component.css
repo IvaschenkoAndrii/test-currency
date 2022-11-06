@@ -1,12 +1,33 @@
-.wrap-exchange{
+.wrap-exchange {
   display: flex;
   border: 1px solid red;
 }
 
-.currency-value div{
+.currency-value div {
   display: flex;
   padding-top: 15px;
   align-items: center;
   justify-content: space-around;
   width: 498px;
+}
+
+@media screen and (max-width: 667px) {
+
+  .currency-value {
+    width: 358px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .currency-value div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .curSelect{
+    width: 200px;
+  }
+
 }

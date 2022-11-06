@@ -1,11 +1,11 @@
-.wrap-all{
+.wrap-all {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.wrap-header{
+.wrap-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,13 +13,13 @@
   width: 500px;
 }
 
-.curencyRates{
+.curencyRates {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.currency{
+.currency {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +27,23 @@
   margin: 20px;
 }
 
-.currencyDate{
+.currencyDate {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+@media screen and (max-width: 667px) {
+
+  .wrap-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrap-header {
+    width: 360px;
+  }
+
 }

@@ -2,7 +2,7 @@
   <form [formGroup]="form" >
     <div class="currency-value">
       <div>
-        <mat-form-field color="warn" appearance="fill">
+        <mat-form-field class="curSelect" color="warn" appearance="fill">
           <mat-label>Продаж</mat-label>
           <mat-select (selectionChange)="functionI1()" formControlName="select1">
             <mat-option [value]="rateUSD">USD</mat-option>
@@ -11,7 +11,7 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field color="warn" appearance="fill">
+        <mat-form-field class="curSelect" color="warn" appearance="fill">
           <mat-label>Купівля</mat-label>
           <mat-select (selectionChange)="functionI2()" formControlName="select2">
             <mat-option [value]="rateUSD">USD</mat-option>
