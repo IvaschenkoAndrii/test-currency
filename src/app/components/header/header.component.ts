@@ -20,27 +20,20 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currencyService.getAll().subscribe(value => {
+    this.currencyService.getAll().
+
+
+    subscribe(value => {
       this.currency = value;
 
-      if (this.currency[25].cc === 'USD') {
-        this.rateUSD = parseFloat((this.currency[25].rate).toFixed(2));
-        this.rateDate = this.currency[25].exchangedate;
-      } else {
-        const indexUSD = this.currency.findIndex(value => value.cc === 'USD');
-        this.rateUSD = parseFloat((this.currency[indexUSD].rate).toFixed(2));
-        this.rateDate = this.currency[indexUSD].exchangedate;
-      }
+      const indexUSD = this.currency.findIndex(value => value.cc === 'USD');
+      this.rateUSD = parseFloat((this.currency[indexUSD].rate).toFixed(2));
 
-      if (this.currency[32].cc === 'EUR') {
-        this.rateEUR = parseFloat((this.currency[32].rate).toFixed(2));
-      } else {
-        const indexEUR = this.currency.findIndex(value => value.cc === 'EUR');
-        this.rateEUR = parseFloat((this.currency[indexEUR].rate).toFixed(2));
-      }
+      const indexEUR = this.currency.findIndex(value => value.cc === 'EUR');
+      this.rateEUR = parseFloat((this.currency[indexEUR].rate).toFixed(2));
+
+      this.rateDate = this.currency[indexUSD].exchangedate;
 
     })
-
   }
-
 }
