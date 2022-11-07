@@ -1,10 +1,10 @@
 <div class="wrap-exchange">
-  <form [formGroup]="form" >
+  <form [formGroup]="form">
     <div class="currency-value">
       <div>
         <mat-form-field class="curSelect" color="warn" appearance="fill">
           <mat-label>Продаж</mat-label>
-          <mat-select (selectionChange)="functionI1()" formControlName="select1">
+          <mat-select formControlName="select1">
             <mat-option [value]="rateUSD">USD</mat-option>
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
@@ -13,7 +13,7 @@
 
         <mat-form-field class="curSelect" color="warn" appearance="fill">
           <mat-label>Купівля</mat-label>
-          <mat-select (selectionChange)="functionI2()" formControlName="select2">
+          <mat-select formControlName="select2">
             <mat-option [value]="rateUSD">USD</mat-option>
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
@@ -24,12 +24,12 @@
       <div>
         <mat-form-field appearance="fill" color="warn">
           <mat-label>Сума</mat-label>
-          <input (change)="functionI1()" type="number" matInput placeholder="Value" formControlName="input1">
+          <input type="number" matInput placeholder="Value" formControlName="input1">
         </mat-form-field>
 
         <mat-form-field appearance="fill" color="warn">
           <mat-label>Сума</mat-label>
-          <input (change)="functionI2()" type="number" matInput placeholder="Value" formControlName="input2">
+          <input  type="number" matInput placeholder="Value" formControlName="input2">
         </mat-form-field>
       </div>
     </div>

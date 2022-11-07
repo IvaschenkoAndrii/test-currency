@@ -22,6 +22,13 @@ export class ExchangeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form.valueChanges.subscribe(() =>
+      this.form.setValue({
+        input1: this.form.value.input1,
+        input2: (this.form.value.input1 * this.form.value.select1 / this.form.value.select2).toFixed(2),
+        select1: this.form.value.select1,
+        select2: this.form.value.select2
+      }));
   }
 
   _initForm(): void {
@@ -33,21 +40,20 @@ export class ExchangeComponent implements OnInit {
     })
   }
 
-  functionI1() {
-    this.form.setValue({
-      input1: this.form.value.input1,
-      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
-  }
-
-  functionI2() {
-    this.form.setValue({
-      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
-      input2: this.form.value.input2,
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
-  }
+  // functionI1() {
+  //   this.form.setValue({
+  //
+  //     input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
+  //
+  //   })
+  // }
+  //
+  // functionI2() {
+  //   this.form.setValue({
+  //     input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
+  //     input2: this.form.value.input2,
+  //     select1:this.form.value.select1,
+  //     select2: this.form.value.select2
+  //   })
+  // }
 }
