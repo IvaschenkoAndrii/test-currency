@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  // API: 'https://bank.gov.ua/NBUStatService/v1'
+  API: 'https://bank.gov.ua/NBUStatService/v1'
 }
