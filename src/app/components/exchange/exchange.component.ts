@@ -33,21 +33,23 @@ export class ExchangeComponent implements OnInit {
     })
   }
 
-  functionI1() {
-    this.form.setValue({
-      input1: this.form.value.input1,
-      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
+  functionI1() :void{
+    this.form.valueChanges.subscribe(value =>
+    { // @ts-ignore
+      this.form.get('input1').setValue = value;
+      // @ts-ignore
+      this.form.get('input2').setValue = '2';
+    }
+    )
   }
 
   functionI2() {
-    this.form.setValue({
-      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
-      input2: this.form.value.input2,
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
+    this.form.patchValue({
+        input1: (this.form.value.input2 * this.form.value.select2 / this.form.value.select1).toFixed(2),
+        input2: this.form.value.input2,
+        select1: this.form.value.select1,
+        select2: this.form.value.select2
+      }
+    );
   }
 }
