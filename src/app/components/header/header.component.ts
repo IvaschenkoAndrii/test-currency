@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
     this.currencyService.getAll().subscribe(value => {
       this.currency = value;
 
-
       this.currency.findIndex(value => {
+        this.rateDate = value.exchangedate;
         if (value.cc === 'USD') {
           this.rateUSD = parseFloat((value.rate).toFixed(2));
         } else if (value.cc === 'EUR') {
