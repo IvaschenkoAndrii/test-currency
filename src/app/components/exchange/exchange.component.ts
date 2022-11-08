@@ -22,6 +22,7 @@ export class ExchangeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form.valueChanges.subscribe(value => console.log(value))
   }
 
   _initForm(): void {
@@ -40,8 +41,9 @@ export class ExchangeComponent implements OnInit {
       input2:(value.input1*value.select1/value.select2).toFixed(2),
       select1:value.select1,
       select2: value.select2
-    },{ emitEvent: false }))
+    },{ emitEvent:  false }))
   }
+
 
   functionI2() {
     this.form.valueChanges.subscribe(value =>
