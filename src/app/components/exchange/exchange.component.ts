@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CurrencyService} from "../../services/currency.service";
+import {ICurrency} from "../../interfaces";
 
 
 @Component({
@@ -9,15 +11,22 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 
 export class ExchangeComponent implements OnInit {
-  @Input()
-  rateUSD: number;
+  // @Input()
+  // rateUSD: number;
+  //
+  // @Input()
+  // rateEUR: number;
 
-  @Input()
+  currency: ICurrency[];
+
+  rateUSD: number;
   rateEUR: number;
+
+  rateDate: string;
 
   form: FormGroup;
 
-  constructor() {
+  constructor(private currencyService: CurrencyService) {
     this._initForm()
   }
 
@@ -48,6 +57,21 @@ export class ExchangeComponent implements OnInit {
       input2: this.form.value.input2,
       select1:this.form.value.select1,
       select2: this.form.value.select2
+    })
+  }
+
+  onChange() {
+    this.currencyService.getAll().subscribe(value => {
+      this.currency = value;
+
+      this.currency.findIndex(value => {
+        this.rateDate = value.exchangedate;
+        if (value.cc === 'USD') {
+          this.rateUSD = parseFloat((value.rate).toFixed(2));
+        } else if (value.cc === 'EUR') {
+          this.rateEUR = parseFloat((value.rate).toFixed(2));
+        }
+      })
     })
   }
 }

@@ -1,5 +1,5 @@
 <div class="wrap-exchange">
-  <form [formGroup]="form" >
+  <form [formGroup]="form" (change)="onChange()">
     <div class="currency-value">
       <div>
         <mat-form-field class="curSelect" color="warn" appearance="fill">
