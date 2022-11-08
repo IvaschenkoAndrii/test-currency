@@ -24,17 +24,13 @@ export class HeaderComponent implements OnInit {
       this.currency = value;
 
 
-      const indexUSD = this.currency.findIndex(value => value.cc === 'USD');
-      this.rateUSD = parseFloat((this.currency[indexUSD].rate).toFixed(2));
-
-      const indexEUR = this.currency.findIndex(value => value.cc === 'EUR');
-      this.rateEUR = parseFloat((this.currency[indexEUR].rate).toFixed(2));
-
-      this.rateDate = this.currency[indexUSD].exchangedate;
-
-
+      this.currency.findIndex(value => {
+        if (value.cc === 'USD') {
+          this.rateUSD = parseFloat((value.rate).toFixed(2));
+        } else if (value.cc === 'EUR') {
+          this.rateEUR = parseFloat((value.rate).toFixed(2));
+        }
+      })
     })
-
   }
-
 }
