@@ -28,8 +28,14 @@ export class ExchangeComponent implements OnInit {
     this.form = new FormGroup({
       select1: new FormControl(1, [Validators.required]),
       select2: new FormControl(1, [Validators.required]),
-      input1: new FormControl(null, [Validators.required]),
-      input2: new FormControl(null, [Validators.required]),
+      input1: new FormControl(null, [
+        Validators.required,
+        Validators.min(0)
+      ]),
+      input2: new FormControl(null, [
+        Validators.required,
+        Validators.min(0)
+      ]),
     })
   }
 
