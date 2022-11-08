@@ -34,20 +34,22 @@ export class ExchangeComponent implements OnInit {
   }
 
   functionI1() {
-    this.form.setValue({
-      input1: this.form.value.input1,
-      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
+    this.form.valueChanges.subscribe(value =>
+    this.form.patchValue({
+      input1: value.input1,
+      input2:(value.input1*value.select1/value.select2).toFixed(2),
+      select1:value.select1,
+      select2: value.select2
+    },{ emitEvent: false }))
   }
 
   functionI2() {
-    this.form.setValue({
-      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
-      input2: this.form.value.input2,
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
+    this.form.valueChanges.subscribe(value =>
+    this.form.patchValue({
+      input1: (value.input2*value.select2/value.select1).toFixed(2),
+      input2: value.input2,
+      select1:value.select1,
+      select2: value.select2
+    },{ emitEvent: false }))
   }
 }
