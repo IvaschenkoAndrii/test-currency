@@ -34,23 +34,21 @@ export class ExchangeComponent implements OnInit {
     })
   }
 
-  functionI1(a:any) {
-    this.form.get(a)?.valueChanges.subscribe(value => {
-      console.log(a);
+  functionI1(element:any) {
+    this.form.get(element)?.valueChanges.subscribe(value => {
       console.log(value);
-      this.form. patchValue({input2: a.value.input1*value.select1/value.select2});
-      // this.form.patchValue({input2: value*this.form.value.select1/this.form.value.select2})
-      // this.form.patchValue({select2:this.form.value.select2})
-      // this.form.patchValue({select1:this.form.value.select1})
+      console.log(element);
+      this.form. patchValue({input2: value*this.form.value.select1/this.form.value.select2});
+      this.form.patchValue({select2:this.form.value.select2})
+      this.form.patchValue({select1:this.form.value.select1})
      })}
 
 
   functionI2() {
-    // this.form.get('input2')?.valueChanges.subscribe(value => {
-    //   console.log(value);
-    //   this.form.patchValue({input1: value*this.form.value.select2/this.form.value.select1})
-    //   this.form.patchValue({select1:this.form.value.select1})
-    //   this.form.patchValue({select2:this.form.value.select2})
-    // })
+//     this.form.get('input2')?.valueChanges.subscribe(value => {
+//       this.form.patchValue({input1: value*this.form.value.select2/this.form.value.select1})
+//       this.form.patchValue({select1:this.form.value.select1})
+//       this.form.patchValue({select2:this.form.value.select2})
+//     })
 }
 }
