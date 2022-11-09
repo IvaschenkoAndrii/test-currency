@@ -35,9 +35,12 @@ export class ExchangeComponent implements OnInit {
   }
 
   functionI1(element: any) {
-    // this.form.get(element)?.valueChanges.subscribe(value => {
+    this.form.get(element)?.valueChanges.subscribe(value => {
 
-    switch (element) {
+      console.log(value);
+      console.log(element);
+
+      switch (element) {
 
       case 'input1':
         this.form.patchValue({input2: (this.form.value.input1 * this.form.value.select1 / this.form.value.select2).toFixed(2)});
@@ -56,8 +59,8 @@ export class ExchangeComponent implements OnInit {
         break;
 
     }
-    //   }
-    // )
+      }
+    )
   }
 
 }
