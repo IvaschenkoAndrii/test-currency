@@ -4,7 +4,7 @@
       <div>
         <mat-form-field class="curSelect" color="warn" appearance="fill">
           <mat-label>Продаж</mat-label>
-          <mat-select (selectionChange)="functionI1()" formControlName="select1">
+          <mat-select (selectionChange)="functionI1('select1')" formControlName="select1">
             <mat-option [value]="rateUSD">USD</mat-option>
             <mat-option [value]="rateEUR">EUR</mat-option>
             <mat-option [value]=1>UAH</mat-option>
@@ -24,7 +24,7 @@
       <div>
         <mat-form-field appearance="fill" color="warn">
           <mat-label>Сума</mat-label>
-          <input (change)="functionI1()" type="number" matInput placeholder="Value" formControlName="input1">
+          <input (change)="functionI1('input1')" type="number" matInput placeholder="Value" formControlName="input1">
         </mat-form-field>
 
         <mat-form-field appearance="fill" color="warn">
