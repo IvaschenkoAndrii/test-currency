@@ -40,25 +40,25 @@ export class ExchangeComponent implements OnInit {
     switch (element) {
 
       case 'input1':
-        this.form.patchValue({input2: this.form.value.input1 * this.form.value.select1 / this.form.value.select2});
+        this.form.patchValue({input2: (this.form.value.input1 * this.form.value.select1 / this.form.value.select2).toFixed(2)});
         // this.form.patchValue({select2: this.form.value.select2})
         // this.form.patchValue({select1: this.form.value.select1})
         break;
 
       case 'input2':
-        this.form.patchValue({input1: this.form.value.input2 * this.form.value.select2 / this.form.value.select1});
+        this.form.patchValue({input1: (this.form.value.input2 * this.form.value.select2 / this.form.value.select1).toFixed(2)});
         // this.form.patchValue({select2: this.form.value.select2})
         // this.form.patchValue({select1: this.form.value.select1})
         break;
 
       case 'select1':
-        this.form.patchValue({input2: this.form.value.input1 * this.form.value.select1 / this.form.value.select2});
+        this.form.patchValue({input2: (this.form.value.input1 * this.form.value.select1 / this.form.value.select2).toFixed(2)});
         // this.form.patchValue({select2: this.form.value.select2})
         // this.form.patchValue({select1: this.form.value.select1})
         break;
 
       case 'select2':
-        this.form.patchValue({input1: this.form.value.input2 * this.form.value.select2 / this.form.value.select1});
+        this.form.patchValue({input1: (this.form.value.input2 * this.form.value.select2 / this.form.value.select1).toFixed(2)});
         // this.form.patchValue({select2: this.form.value.select2})
         // this.form.patchValue({select1: this.form.value.select1})
         break;
