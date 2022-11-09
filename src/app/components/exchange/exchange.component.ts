@@ -33,7 +33,7 @@ export class ExchangeComponent implements OnInit {
     })
   }
 
-  functionI1(element: any) {
+  onChange(element: any) {
     // this.form.get(element)?.valueChanges.pipe(take(1)).subscribe(value => {
     //
     //   console.log(value);
