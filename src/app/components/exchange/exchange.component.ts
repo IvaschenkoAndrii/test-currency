@@ -26,28 +26,27 @@ export class ExchangeComponent implements OnInit {
 
   _initForm(): void {
     this.form = new FormGroup({
-      select1: new FormControl(1, [Validators.required]),
-      select2: new FormControl(1, [Validators.required]),
+      select1: new FormControl(null, [Validators.required]),
+      select2: new FormControl(null, [Validators.required]),
       input1: new FormControl(null, [Validators.required]),
       input2: new FormControl(null, [Validators.required]),
     })
   }
 
   functionI1() {
-    this.form.setValue({
-      input1: this.form.value.input1,
-      input2:(this.form.value.input1*this.form.value.select1/this.form.value.select2).toFixed(2),
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
-  }
+    this.form.get('input1')?.valueChanges.subscribe(value => {
+      console.log(value);
+      this.form.patchValue({input2: value*this.form.value.select1/this.form.value.select2})
+      this.form.patchValue({select2:this.form.value.select2})
+      this.form.patchValue({select1:this.form.value.select1})
+     })}
+
 
   functionI2() {
-    this.form.setValue({
-      input1: (this.form.value.input2*this.form.value.select2/this.form.value.select1).toFixed(2),
-      input2: this.form.value.input2,
-      select1:this.form.value.select1,
-      select2: this.form.value.select2
-    })
-  }
+    this.form.get('input2')?.valueChanges.subscribe(value => {
+      // console.log(value);
+      // this.form.patchValue({input2: value*this.form.value.select1/this.form.value.select2})
+      // this.form.patchValue({select1:this.form.value.select1})
+      // this.form.patchValue({select2:this.form.value.select2})
+    })}
 }
