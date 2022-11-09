@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
+import {take} from "rxjs";
 
 
 @Component({
@@ -35,12 +35,12 @@ export class ExchangeComponent implements OnInit {
   }
 
   functionI1(element: any) {
-    // this.form.get(element)?.valueChanges.subscribe(value => {
+    // this.form.get(element)?.valueChanges.pipe(take(1)).subscribe(value => {
     //
     //   console.log(value);
     //   console.log(element);
 
-      switch (element) {
+    switch (element) {
 
       case 'input1':
         this.form.patchValue({input2: (this.form.value.input1 * this.form.value.select1 / this.form.value.select2).toFixed(2)});
@@ -59,7 +59,8 @@ export class ExchangeComponent implements OnInit {
         break;
 
     }
-      }
-  //   )
-  // }
+    // })
+
+  }
+
 }
