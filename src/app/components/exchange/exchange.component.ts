@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ICurrency} from "../../interfaces";
+
 
 
 @Component({
@@ -35,10 +35,10 @@ export class ExchangeComponent implements OnInit {
   }
 
   functionI1(element: any) {
-    this.form.get(element)?.valueChanges.subscribe(value => {
-
-      console.log(value);
-      console.log(element);
+    // this.form.get(element)?.valueChanges.subscribe(value => {
+    //
+    //   console.log(value);
+    //   console.log(element);
 
       switch (element) {
 
@@ -60,7 +60,6 @@ export class ExchangeComponent implements OnInit {
 
     }
       }
-    )
-  }
-
+  //   )
+  // }
 }
